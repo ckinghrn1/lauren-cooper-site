@@ -1,0 +1,29 @@
+---
+layout: base.html
+title: Blog
+description: Thoughts on literature, self-growth, and the inner life.
+permalink: /blog/
+---
+
+<section class="blog-listing">
+    <span class="section__script">Mind Garden</span>
+    <h1 class="section__heading">Blog</h1>
+    <p class="section__text">Thoughts on literature, self-growth, and the inner life.</p>
+
+    <div class="blog-list">
+        {%- for post in collections.posts -%}
+        <a href="{{ post.url }}" class="blog-card">
+            <time class="blog-card__date">{{ post.date | readableDate }}</time>
+            <h2 class="blog-card__title">{{ post.data.title }}</h2>
+            <p class="blog-card__desc">{{ post.data.description }}</p>
+            <div class="blog-card__tags">
+                {%- for tag in post.data.tags -%}
+                {%- if tag != "posts" -%}
+                <span class="tag">{{ tag }}</span>
+                {%- endif -%}
+                {%- endfor -%}
+            </div>
+        </a>
+        {%- endfor -%}
+    </div>
+</section>

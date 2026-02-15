@@ -1,0 +1,26 @@
+---
+layout: base.html
+---
+
+<article class="post">
+    <header class="post__header">
+        <span class="section__script">Blog</span>
+        <h1 class="post__title">{{ title }}</h1>
+        <time class="post__date">{{ date | readableDate }}</time>
+        {% if tags %}
+        <div class="post__tags">
+            {%- for tag in tags -%}
+            {%- if tag != "posts" -%}
+            <a href="/blog/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+            {%- endif -%}
+            {%- endfor -%}
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="post__body">
+        {{ content | safe }}
+    </div>
+
+    <a href="/blog/" class="btn btn--dark post__back">&larr; Back to Blog</a>
+</article>

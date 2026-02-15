@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} | Dr Lauren Cooper</title>
+    <meta name="description"
+        content="{{ description or 'Dr Lauren Cooper — Independent Educator, Workshop Facilitator, and Literary Scholar.' }}" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+    <!-- ─── Navigation ─── -->
+    <nav class="nav scrolled" id="nav">
+        <a href="/" class="nav__logo">Lauren Cooper</a>
+        <ul class="nav__links" id="navLinks">
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#workshops">Workshops</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a href="https://buymeacoffee.com" target="_blank" rel="noopener">Shop</a></li>
+        </ul>
+        <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ─── Content ─── -->
+    <main class="page-content">
+        {{ content | safe }}
+    </main>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer" id="contact">
+        <div>
+            <h2 class="footer__heading">Let's Connect</h2>
+            <p class="footer__email"><a href="mailto:hello@laurencooper.me">hello@laurencooper.me</a></p>
+            <p class="footer__location">Bournemouth, UK</p>
+            <a href="https://calendar.app.google/35BwKmkg77zuJWMy6" target="_blank" rel="noopener" class="btn">
+                Book a Discovery Chat
+            </a>
+            <p class="footer__copy">&copy; 2025 Dr Lauren Cooper. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    </script>
+
+</body>
+
+</html>
