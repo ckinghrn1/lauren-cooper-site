@@ -7,19 +7,19 @@
     <title>{{ title }} | Dr Lauren Cooper</title>
     <meta name="description"
         content="{{ description or 'Dr Lauren Cooper — Independent Educator, Workshop Facilitator, and Literary Scholar.' }}" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="{{ '/style.css' | url }}" />
 </head>
 
 <body>
 
     <!-- ─── Navigation ─── -->
     <nav class="nav scrolled" id="nav">
-        <a href="/" class="nav__logo">Lauren Cooper</a>
+        <a href="{{ '/' | url }}" class="nav__logo">Lauren Cooper</a>
         <ul class="nav__links" id="navLinks">
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#workshops">Workshops</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href="{{ '/' | url }}#about">About</a></li>
+            <li><a href="{{ '/' | url }}#workshops">Workshops</a></li>
+            <li><a href="{{ '/blog/' | url }}">Blog</a></li>
+            <li><a href="{{ '/' | url }}#contact">Contact</a></li>
             <li><a href="https://buymeacoffee.com" target="_blank" rel="noopener">Shop</a></li>
         </ul>
         <button class="nav__hamburger" id="hamburger" aria-label="Menu">

@@ -12,7 +12,7 @@ permalink: /blog/
 
     <div class="blog-list">
         {%- for post in collections.posts -%}
-        <a href="{{ post.url }}" class="blog-card">
+        <a href="{{ post.url | url }}" class="blog-card">
             <time class="blog-card__date">{{ post.date | readableDate }}</time>
             <h2 class="blog-card__title">{{ post.data.title }}</h2>
             <p class="blog-card__desc">{{ post.data.description }}</p>

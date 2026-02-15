@@ -11,7 +11,7 @@ layout: base.html
         <div class="post__tags">
             {%- for tag in tags -%}
             {%- if tag != "posts" -%}
-            <a href="/blog/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+            <a href="{{ '/blog/' | url }}" class="tag">{{ tag }}</a>
             {%- endif -%}
             {%- endfor -%}
         </div>
@@ -22,5 +22,5 @@ layout: base.html
         {{ content | safe }}
     </div>
 
-    <a href="/blog/" class="btn btn--dark post__back">&larr; Back to Blog</a>
+    <a href="{{ '/blog/' | url }}" class="btn btn--dark post__back">&larr; Back to Blog</a>
 </article>
