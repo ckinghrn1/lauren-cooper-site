@@ -1,5 +1,3 @@
-const pathPrefix = process.env.GITHUB_ACTIONS ? '/lauren-cooper-site/' : '/';
-
 module.exports = function (eleventyConfig) {
 
     // Pass through static assets untouched
@@ -23,7 +21,6 @@ module.exports = function (eleventyConfig) {
     });
 
     return {
-        pathPrefix,
         dir: {
             input: ".",
             includes: "_includes",
